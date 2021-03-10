@@ -88,8 +88,8 @@ module.exports = function PostGraphileFulltextFilterPlugin(builder) {
       "matches",
       "Performs a full text search on the field.",
       () => GraphQLString,
-      (identifier, val, input, fieldName, queryBuilder) => {
-        const tsQueryString = `${tsquery.parse(input) || ""}`;
+      (identifier, _val, input, fieldName, queryBuilder) => {
+        const tsQueryString = tsquery.parseAndStringify(input);
         queryBuilder.__fts_ranks = queryBuilder.__fts_ranks || {};
         queryBuilder.__fts_ranks[fieldName] = [identifier, tsQueryString];
         return sql.query`${identifier} @@ to_tsquery(${sql.value(
