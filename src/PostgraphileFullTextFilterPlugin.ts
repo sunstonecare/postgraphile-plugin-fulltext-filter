@@ -36,6 +36,11 @@ export default function PostGraphileFulltextFilterPlugin(builder) {
       throw new Error('Unable to find tsvector type through introspection.')
     }
 
+    // convert internal gtsvector type to tsvector
+    if (tsvectorType.id === '3642') {
+      tsvectorType.id = '3614'
+    }
+
     const scalarName = inflection.fullTextScalarTypeName()
 
     const GraphQLFullTextType = new GraphQLScalarType({
