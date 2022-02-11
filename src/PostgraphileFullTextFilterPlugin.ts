@@ -93,7 +93,7 @@ export default function PostGraphileFulltextFilterPlugin(builder) {
         const tsQueryString = tsquery.parseAndStringify(input)
         queryBuilder.__fts_ranks = queryBuilder.__fts_ranks || {}
         queryBuilder.__fts_ranks[fieldName] = [identifier, tsQueryString]
-        return sql.query`${identifier} @@ to_tsquery(${sql.value(tsQueryString)})`
+        return sql.query`${identifier} @@ to_tsquery(${sql.value(tsQueryString + ':*')})`
       },
     )
 
@@ -161,7 +161,10 @@ export default function PostGraphileFulltextFilterPlugin(builder) {
                 return
               }
               const [identifier, tsQueryString] = parentQueryBuilder.__fts_ranks[baseFieldName]
-              queryBuilder.select(sql.fragment`ts_rank(${identifier}, to_tsquery(${sql.value(tsQueryString)}))`, alias)
+              queryBuilder.select(
+                sql.fragment`ts_rank(${identifier}, to_tsquery(${sql.value(tsQueryString + ':*')}))`,
+                alias,
+              )
             },
           }))
           return {
@@ -256,7 +259,7 @@ export default function PostGraphileFulltextFilterPlugin(builder) {
               return sql.fragment`1`
             }
             const [identifier, tsQueryString] = queryBuilder.__fts_ranks[fieldName]
-            return sql.fragment`ts_rank(${identifier}, to_tsquery(${sql.value(tsQueryString)}))`
+            return sql.fragment`ts_rank(${identifier}, to_tsquery(${sql.value(tsQueryString + ':*')}))`
           }
 
           memo[ascFieldName] = {

@@ -1,6 +1,6 @@
 {
   "name": "@theo.gravity/postgraphile-plugin-fulltext-filter",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Full text searching on tsvector fields for use with postgraphile-plugin-connection-filter",
   "main": "build/index.js",
   "repository": {
