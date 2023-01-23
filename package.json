@@ -21,7 +21,8 @@
     "compile": "tsc",
     "package": "npm run build && npm pack",
     "test": "scripts/test jest -i",
-    "lint": "eslint src/index.ts src/**/*.ts"
+    "lint": "eslint src/index.ts src/**/*.ts",
+    "postinstall": "tsc --outDir ./build"
   },
   "dependencies": {
     "graphile-build-pg": "^4.12.2",
