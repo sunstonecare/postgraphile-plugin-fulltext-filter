@@ -1,16 +1,16 @@
 {
-  "name": "@theo.gravity/postgraphile-plugin-fulltext-filter",
-  "version": "1.0.4",
+  "name": "@sunstonecare/postgraphile-plugin-fulltext-filter",
+  "version": "1.0.5",
   "description": "Full text searching on tsvector fields for use with postgraphile-plugin-connection-filter",
   "main": "build/index.js",
   "repository": {
-    "url": "git+https://github.com/theogravity/postgraphile-plugin-fulltext-filter.git",
+    "url": "git+https://github.com/sunstonecare/postgraphile-plugin-fulltext-filter.git",
     "type": "git"
   },
   "author": "Mark Lipscombe",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/theogravity/postgraphile-plugin-fulltext-filter.git"
+    "url": "https://github.com/sunstonecare/postgraphile-plugin-fulltext-filter.git"
   },
   "files": [
     "build/"
@@ -19,6 +19,7 @@
     "build": "npm run build:clean && npm run compile",
     "build:clean": "rm -rf build/*",
     "compile": "tsc",
+    "package": "npm run build && npm pack",
     "test": "scripts/test jest -i",
     "lint": "eslint src/index.ts src/**/*.ts"
   },
