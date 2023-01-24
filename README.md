@@ -1,7 +1,7 @@
-[![Package on npm](https://img.shields.io/npm/v/postgraphile-plugin-fulltext-filter.svg)](https://www.npmjs.com/package/@sunstonecare/postgraphile-plugin-fulltext-filter)
+[![Package on npm](https://img.shields.io/npm/v/@sunstonecare/postgraphile-plugin-fulltext-filter.svg)](https://www.npmjs.com/package/@sunstonecare/postgraphile-plugin-fulltext-filter)
 
 # postgraphile-plugin-fulltext-filter
-This plugin implements a full text search operator for `tsvector` columns in PostGraphile v4 via @mattbretl's excellent `postgraphile-plugin-connection-filter` plugin. This version is based on a fork of the original ([Original plugin repo](https://github.com/mlipscombe/postgraphile-plugin-fulltext-filter)) repo by @theogravity [Fork repo](https://github.com/theogravity/postgraphile-plugin-fulltext-filter). 
+This plugin implements a full text search operator for `tsvector` columns in PostGraphile v4 via @mattbretl's excellent `postgraphile-plugin-connection-filter` plugin. This version is based on a fork of the original ([Original plugin repo](https://github.com/mlipscombe/postgraphile-plugin-fulltext-filter)) repo by @theogravity [Fork repo](https://github.com/theogravity/postgraphile-plugin-fulltext-filter).
 
 ## Getting Started
 
@@ -56,7 +56,7 @@ user input to prevent Postgres throwing on bad user input unnecessarily.
 
 ## Fields
 
-For each `tsvector` column, a rank column will be automatically added to the 
+For each `tsvector` column, a rank column will be automatically added to the
 GraphQL type for the table by appending `Rank` to the end of the column's name.
 For example, a column `full_text` will appear as `fullText` in the GraphQL type,
 and a second column, `fullTextRank` will be added to the type as a `Float`.
