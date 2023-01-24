@@ -1,8 +1,7 @@
-[![Package on npm](https://img.shields.io/npm/v/postgraphile-plugin-fulltext-filter.svg)](https://www.npmjs.com/package/postgraphile-plugin-fulltext-filter)
-[![CircleCI](https://circleci.com/gh/mlipscombe/postgraphile-plugin-fulltext-filter/tree/master.svg?style=svg)](https://circleci.com/gh/mlipscombe/postgraphile-plugin-fulltext-filter/tree/master)
+[![Package on npm](https://img.shields.io/npm/v/postgraphile-plugin-fulltext-filter.svg)](https://www.npmjs.com/package/@sunstonecare/postgraphile-plugin-fulltext-filter)
 
 # postgraphile-plugin-fulltext-filter
-This plugin implements a full text search operator for `tsvector` columns in PostGraphile v4 via @mattbretl's excellent `postgraphile-plugin-connection-filter` plugin.
+This plugin implements a full text search operator for `tsvector` columns in PostGraphile v4 via @mattbretl's excellent `postgraphile-plugin-connection-filter` plugin. This version is based on a fork of the original ([Original plugin repo](https://github.com/mlipscombe/postgraphile-plugin-fulltext-filter)) repo by @theogravity [Fork repo](https://github.com/theogravity/postgraphile-plugin-fulltext-filter). 
 
 ## Getting Started
 
